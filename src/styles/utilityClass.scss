@@ -15,6 +15,18 @@
   justify-content: space-between;
 }
 
+.jc-end {
+  justify-content: end;
+}
+
+.grow-1 {
+  flex-grow: 1;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
 // Width
 
 .w-100 {
@@ -41,6 +53,10 @@
   border-radius: 16px;
 }
 
+.border {
+  border: 1px solid var(--color-gray);
+}
+
 // Position
 
 .relative {
@@ -49,6 +65,12 @@
 
 .absolute {
   position: absolute;
+}
+
+// Overflow
+
+.overflow-x-scroll {
+  overflow-x: scroll;
 }
 
 // Other
