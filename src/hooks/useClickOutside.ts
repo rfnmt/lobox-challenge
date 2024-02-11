@@ -19,5 +19,7 @@ export function useClickOutside({ targetRef, handler }: Args) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
+    // It's not a good idea to pass refs as a useEffect dependency!
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [handler]);
 }
