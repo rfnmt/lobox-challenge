@@ -1,0 +1,14 @@
+.DropDown {
+  &__optionsContainer {
+    max-height: 300px;
+    overflow-y: scroll;
+    border: 1px solid var(--color-gray-ultralight);
+  }
+
+  &__optionItem {
+    &--selected {
+      background-color: var(--color-blue-light);
+      color: var(--color-blue);
+    }
+  }
+}
