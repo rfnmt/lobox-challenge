@@ -1,0 +1,19 @@
+.TextInput {
+  &__container {
+    border: 1px solid var(--color-gray-light);
+    -webkit-box-shadow: 1px 1px 5px 0px var(--color-gray-light);
+    box-shadow: 1px 1px 5px 0px var(--color-gray-light);
+
+    &:focus-within {
+      border: 1px solid var(--color-blue);
+      -webkit-box-shadow: 1px 1px 5px 0px var(--color-blue);
+      box-shadow: 1px 1px 5px 0px var(--color-blue);
+    }
+  }
+
+  &__input {
+    color: var(--color-gray);
+    outline: none;
+    border: none;
+  }
+}
