@@ -6,16 +6,16 @@ For bundling and building the project, I used "Vite" which is a fast, light, and
 
 ## Features And Requirements
 
-- Using React JS
-- DropDown list
-- Select dropdown items by click
-- Multi select feature
-- Add new items by Enter
-- Close drop down by clicking outside of the element
-- Using custom hooks
-- Use scss for styling
-- Using TypeScript
-- Do not using codes from chat bots or pre-made codes from other resources
+- [x] Using React JS
+- [x] DropDown list
+- [x] Select dropdown items by click
+- [x] Multi select feature
+- [x] Add new items by Enter
+- [x] Close drop down by clicking outside of the element
+- [x] Using custom hooks
+- [x] Use scss for styling
+- [x] Using TypeScript
+- [x] Do not using codes from chat bots or pre-made codes from other resources
 
 ## Commands
 
