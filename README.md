@@ -15,7 +15,7 @@ For bundling and building the project, I used "Vite" which is a fast, light, and
 - [x] Using custom hooks
 - [x] Use scss for styling
 - [x] Using TypeScript
-- [x] Do not using codes from chat bots or pre-made codes from other resources
+- [x] Not using codes from chat bots or pre-made codes from other resources
 
 ## Commands
 
