@@ -37,7 +37,6 @@ export function useDropDown() {
   return {
     selectedItems,
     setSelectedItems,
-    setValue,
     handleInputKeyDown,
     inputRef,
     removeSelectedItem,

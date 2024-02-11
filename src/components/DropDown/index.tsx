@@ -18,7 +18,6 @@ export default function DropDown({ className, options }: Props) {
     handleInputKeyDown,
     selectedItems,
     setSelectedItems,
-    setValue,
     inputRef,
     removeSelectedItem,
   } = useDropDown();
@@ -51,7 +50,6 @@ export default function DropDown({ className, options }: Props) {
       {isDropDownOpen && (
         <DropDownOptions
           options={options}
-          setValue={setValue}
           selectedItems={selectedItems}
           setSelectedItems={setSelectedItems}
           removeSelectedItem={removeSelectedItem}

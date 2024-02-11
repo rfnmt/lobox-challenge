@@ -5,7 +5,6 @@ import { Dispatch, SetStateAction } from "react";
 
 interface Props {
   options: DropDownOptionType[];
-  setValue: (value: string) => void;
   selectedItems: Record<string, string>;
   setSelectedItems: Dispatch<SetStateAction<Props["selectedItems"]>>;
   removeSelectedItem: (item: string) => void;
@@ -13,7 +12,6 @@ interface Props {
 
 export default function DropDownOptions({
   options,
-  setValue,
   selectedItems,
   setSelectedItems,
   removeSelectedItem,
@@ -23,8 +21,6 @@ export default function DropDownOptions({
       removeSelectedItem(item.label);
     } else {
       setSelectedItems((prev) => ({ [item.label]: item.label, ...prev }));
-
-      setValue(item.label);
     }
   };
 
