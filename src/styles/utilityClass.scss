@@ -1,0 +1,58 @@
+// Display
+.flex {
+  display: flex;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.jc-between {
+  justify-content: space-between;
+}
+
+// Width
+
+.w-100 {
+  width: 100%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+// Height
+
+.h-screen {
+  height: 100vh;
+}
+
+// Border
+
+.radius-8 {
+  border-radius: 8px;
+}
+
+.radius-16 {
+  border-radius: 16px;
+}
+
+// Position
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+// Other
+
+.pointer {
+  cursor: pointer;
+}
