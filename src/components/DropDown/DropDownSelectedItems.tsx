@@ -13,13 +13,8 @@ export default function DropDownSelectedItems({
   removeSelectedItem,
 }: Props) {
   return (
-    <div
-      className={clsx(
-        "flex ai-center shrink-0",
-        Styles.DropDown__selectedItems
-      )}
-    >
-      <div className="flex overflow-x-scroll mr-3 py-3 grow-1">
+    <div className={clsx("flex ai-center", Styles.DropDown__selectedItems)}>
+      <div className="flex overflow-x-scroll mr-3 py-3">
         {Object.values(selectedItems).map((item, index) => (
           <div
             key={`${index}_${item}`}

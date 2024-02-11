@@ -31,7 +31,7 @@ function TextInputComponent(
   return (
     <div
       className={clsx(
-        "flex jc-between ai-center px-4 py-1 radius-8 grow-1",
+        "flex jc-between ai-center px-4 py-1 radius-8",
         Styles.TextInput__container
       )}
       onClick={clickHandler}
