@@ -6,24 +6,30 @@ import { Dispatch, SetStateAction } from "react";
 interface Props {
   options: DropDownOptionType[];
   setValue: (value: string) => void;
-  activeItem: Partial<DropDownOptionType>;
-  setActiveItem: Dispatch<SetStateAction<Props["activeItem"]>>;
+  selectedItems: Record<string, string>;
+  setSelectedItems: Dispatch<SetStateAction<Props["selectedItems"]>>;
+  removeSelectedItem: (item: string) => void;
 }
 
 export default function DropDownOptions({
   options,
   setValue,
-  activeItem,
-  setActiveItem,
+  selectedItems,
+  setSelectedItems,
+  removeSelectedItem,
 }: Props) {
   const selectItemHandler = (item: DropDownOptionType) => () => {
-    setActiveItem(item);
+    if (selectedItems[item.label]) {
+      removeSelectedItem(item.label);
+    } else {
+      setSelectedItems((prev) => ({ [item.label]: item.label, ...prev }));
 
-    setValue(item.label);
+      setValue(item.label);
+    }
   };
 
   const checkItemSelected = (item: DropDownOptionType) =>
-    activeItem.id === item.id && activeItem.label === item.label;
+    !!selectedItems[item.label];
 
   return (
     <div

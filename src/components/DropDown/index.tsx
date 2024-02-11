@@ -6,6 +6,7 @@ import { useDropDown } from "./useDropDown";
 import { useToggleState } from "@/hooks/useToggleState";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import { useRef } from "react";
+import DropDownSelectedItems from "./DropDownSelectedItems";
 
 interface Props {
   className?: string;
@@ -14,13 +15,13 @@ interface Props {
 
 export default function DropDown({ className, options }: Props) {
   const {
-    activeItem,
     handleInputKeyDown,
-    optionsState,
-    setActiveItem,
+    selectedItems,
+    setSelectedItems,
     setValue,
     inputRef,
-  } = useDropDown({ options });
+    removeSelectedItem,
+  } = useDropDown();
 
   const {
     state: isDropDownOpen,
@@ -39,21 +40,21 @@ export default function DropDown({ className, options }: Props) {
         ref={inputRef}
         onKeyDown={handleInputKeyDown}
         prependSlot={
-          <i
-            className={clsx("fa", {
-              "fa-chevron-down": !isDropDownOpen,
-              "fa-chevron-up": isDropDownOpen,
-            })}
+          <DropDownSelectedItems
+            isDropDownOpen={isDropDownOpen}
+            selectedItems={selectedItems}
+            removeSelectedItem={removeSelectedItem}
           />
         }
       />
 
       {isDropDownOpen && (
         <DropDownOptions
-          options={optionsState}
+          options={options}
           setValue={setValue}
-          activeItem={activeItem}
-          setActiveItem={setActiveItem}
+          selectedItems={selectedItems}
+          setSelectedItems={setSelectedItems}
+          removeSelectedItem={removeSelectedItem}
         />
       )}
     </div>

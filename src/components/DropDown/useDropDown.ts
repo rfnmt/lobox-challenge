@@ -1,13 +1,9 @@
 import { KeyboardEventHandler, useRef, useState } from "react";
-import { DropDownOptionType } from "./types";
 
-interface Args {
-  options: DropDownOptionType[];
-}
-
-export function useDropDown({ options }: Args) {
-  const [optionsState, setOptionsState] = useState(options);
-  const [activeItem, setActiveItem] = useState<Partial<DropDownOptionType>>({});
+export function useDropDown() {
+  const [selectedItems, setSelectedItems] = useState<Record<string, string>>(
+    {}
+  );
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -17,29 +13,33 @@ export function useDropDown({ options }: Args) {
     }
   };
 
+  const removeSelectedItem = (item: string) => {
+    // Removing Item from selected list
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { [item]: target, ...rest } = selectedItems;
+
+    setSelectedItems(rest);
+  };
+
   const handleInputKeyDown: KeyboardEventHandler<HTMLInputElement> = async (
     event
   ) => {
     if (event.key === "Enter") {
       const value = inputRef.current?.value.trim();
-      const isAlreadyExists = optionsState.some(
-        (option) => option.label === value
-      );
-      if (value && !isAlreadyExists) {
-        const newOption = { label: value, id: value };
-        setOptionsState((prev) => [newOption, ...prev]);
 
-        setActiveItem(newOption);
+      if (value) {
+        setSelectedItems((prev) => ({ [value]: value, ...prev }));
+        setValue("");
       }
     }
   };
 
   return {
-    optionsState,
-    activeItem,
-    setActiveItem,
+    selectedItems,
+    setSelectedItems,
     setValue,
     handleInputKeyDown,
     inputRef,
+    removeSelectedItem,
   };
 }
